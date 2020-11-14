@@ -54,3 +54,25 @@ def generate():
 def copytoclipboard():
     random_password = passstr.get()
     pyperclip.copy(random_password)
+# Creating a text label widget
+Label(root, text="Password Generator Application", font="calibri 20 bold").pack()
+
+# Creating a text label widget
+Label(root, text="Enter password length").pack(pady=3)
+
+# Creating a entry widget to take password length entered by the 
+# user
+Entry(root, textvariable=passlen).pack(pady=3)
+
+# button to call the generate function
+Button(root, text="Generate Password", command=generate).pack(pady=7)
+
+# entry widget to show the generated password
+Entry(root, textvariable=passstr).pack(pady=3)
+
+# button to call the copytoclipboard function
+Button(root, text="Copy to clipboard", command=copytoclipboard).pack()
+
+# mainloop() is an infinite loop used to run the application when 
+# it's in ready state 
+root.mainloop()
